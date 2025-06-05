@@ -37,6 +37,10 @@ interface IModalProps {
   position?: "top" | "bottom" | "center";
   darkMode?: boolean;
   autoFocusSearch?: boolean;
+  backgroundColor?: {
+    light: string;
+    dark: string;
+  };
 }
 
 export default function Modal({
@@ -58,6 +62,10 @@ export default function Modal({
   position = "center",
   darkMode = false,
   autoFocusSearch = false,
+  backgroundColor = {
+    light: "white",
+    dark: "#352F44",
+  },
 }: IModalProps) {
   const [search, setSearch] = useState("");
   const [selectedCategory, setSelectedCategory] = useState(categories[0]);
@@ -94,7 +102,14 @@ export default function Modal({
           <Animated.View
             entering={FadeInDown.springify()}
             exiting={FadeOutDown}
-            style={[styles.modal, darkMode && { backgroundColor: "#352F44" }]}
+            style={[
+              styles.modal,
+              {
+                backgroundColor: darkMode
+                  ? backgroundColor.dark
+                  : backgroundColor.light,
+              },
+            ]}
           >
             <FilterBar
               darkMode={darkMode}
@@ -175,7 +190,6 @@ const styles = StyleSheet.create({
     maxHeight: screenHeight / 2,
     width: screenWidth - 40,
     borderRadius: 20,
-    backgroundColor: "white",
 
     // shadow
     shadowColor: "#000",
