@@ -1,5 +1,5 @@
 <h2 align="center">
-react-native-emojis-picker
+react-native-emoji-menu
 </h2>
 <p align="center" color="red">
 It's built with TypeScript and uses Reanimated 2 for smooth animations
@@ -12,7 +12,7 @@ It's built with TypeScript and uses Reanimated 2 for smooth animations
 ### Installation
 
 ```bash
-npm install react-native-emojis-picker
+npm install react-native-emoji-menu
 ```
 
 ### Dependencies
@@ -42,7 +42,7 @@ Add `react-native-reanimated/plugin` plugin to your `babel.config.js`.
 wrap the whole app in `EmojiProvider`
 
 ```ts
-import { EmojiProvider } from "react-native-emojis-picker";
+import { EmojiProvider } from "react-native-emoji-menu";
 export default function App() {
   return (
     <EmojiProvider>
@@ -57,7 +57,7 @@ simple emoji component
 ```ts
 import { Button, StyleSheet, Text, View } from "react-native";
 import { useState } from "react";
-import { EmojiModal } from "react-native-emojis-picker";
+import { EmojiModal } from "react-native-emoji-menu";
 
 export default function EmojiComponent() {
   const [showModal, setShowModal] = useState(false);
@@ -97,7 +97,7 @@ const styles = StyleSheet.create({
 now import the component we just created into `App.tsx`
 
 ```ts
-import { EmojiProvider } from "react-native-emojis-picker";
+import { EmojiProvider } from "react-native-emoji-menu";
 import EmojiComponent from "./components/emoji";
 export default function App() {
   return (
@@ -127,4 +127,4 @@ Majed Al-Otaibi, majedbinobied@gmail.com
 
 ### License
 
-react-native-emojis-picker is available under the MIT license. See the LICENSE file for more info
+react-native-emoji-menu is available under the MIT license. See the LICENSE file for more info
